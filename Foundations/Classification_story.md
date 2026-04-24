@@ -85,6 +85,7 @@ if we add a bias term, now draw a line that incorporates this relationship
  -> w controls the rotation -> how steep the slope is
  -> b controls the translation -> where it sits on the origin
 
+### Motivation for logreg
 for a linear function, the output is discrete or continuous?
  - yes it is continuous by nature and
  - naturally outputs a real number along an infinite number line,
@@ -107,23 +108,37 @@ Sigmoid function --> Log reg
 ### Now that we have a probability, how do we convert that to an actual label?
 Simplest: 0.5 threshold, >= 0.5, class label = 1, else 0
 
+### [Q] How does the sigmoid function help linear regression do classification better?
+ - original motivation, to model binary outcomes/probabilities/responses
+ - p(y=1|x) 
+ - model the probability, 
+ - of y the true label, being equals to 1
+ - given data/features x, 
+ - in binary classification, since there are only two possible outcomes
+ - probability of y = 0 would simply be 1 - p(y=1|x)
+
+## Loss Function
 ### Let's say we have a probability ŷ and an actual label y, how do we measure how wrong our probability is?
 Intuitively we can just measure the difference
 Mean error: mean(ŷ - y)
 Smaller difference = our model did a better job
  - but we would have negative and positive errors, 0 - 1 = -1 < 0.1-0 = 0.1 event though the first instance the prediction is further away
 
+ - Two ways to solve negative problem: modulo the error
 Mean absolute error: 
 By taking absolute value of the error
 So regardless of actual label being 0 or one, our error is only positive and comparable
+ - squaring the error has a similar effect with some different nuances 
+ - wont go into that here
 
 ### What's wrong with simply measuring the distance of our errors?
  - penalty grows linearly with error
  - which is acceptable, but there is another train of thought
- - which is to penalise a model dirproportionately harshly when it is confidently wrond
+ - which is to penalise a model dirproportionately harshly when it is confidently wrong
     - and this is not possible with a simple MAE
 
- - the other issue is more nuanced, where we first have to go through the whole model training process
+ - the other issue is more nuanced, 
+ - where we first have to go through the whole model training process
 
 ### How do we train a log reg classification model?
 ### Training process of log reg,
