@@ -134,7 +134,7 @@ So regardless of actual label being 0 or one, our error is only positive and com
 ### What's wrong with simply measuring the distance of our errors?
  - penalty grows linearly with error
  - which is acceptable, but there is another train of thought
- - which is to penalise a model dirproportionately harshly when it is confidently wrong
+ - which is to penalise a model disproportionately harshly when it is confidently wrong
     - and this is not possible with a simple MAE
 
  - the other issue is more nuanced, 
