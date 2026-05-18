@@ -59,6 +59,59 @@ Simpler question, what type of values do we want to predict in classification?
 
 ### Before we go further into a linear regressor for classification
 lets get a deeper intuition for the bias term
+
+## What is a "true relationship"
+Before any ML, why do we need to "learn" anything? (short pause)
+Because there is enormous value in uncovering real-world relationships.
+Uncovering as in, 
+mathematically defining them, and 
+putting concrete numbers and probabilities to them.
+
+For example, quantifying a link we suspect,
+Before we collected data,
+people just sort of suspected that smoking can increase your chances for lung cancer
+but then there were large scale studies that collected data across hundreds of thousands of people
+that allowed us to put concrete numbers to it
+for eg. smokers are roughly 15-30 times more likely to develop lung cancer
+and in the end effecting real change in packaging laws, and shifts in medical guidelines
+
+There is probably an infinite amount of true relationships in the world
+and they can be roughly classified into this confusion matrix
+Their actual mathematical relationship can be known or unknown
+And computationally, they can either be simple or complex
+
+ - things that are unknown dont stay unknown forever
+ - there are levels to knowing, actual laws 
+ - or empirical laws, relationships that were revealed by data
+ - some actually stay unknown for a long/indefinite(impossible to know) time
+
+### Known and Simple
+Cm and M
+### Known and complex
+Sometimes we do know the underlying relationship from first principles, but computing it is expensive. 
+ML can be used, in this case a (neural network) that approximates this true simulator quickly, 
+ - and in this case we have infinite data because the output can be validated against the physics model
+
+ - fluid dynamics
+ - contact mechanics
+ - physics simulations
+ - scenarios where speed is valued
+Weather and fluid simulation: ML models approximate expensive numerical solvers for Burgers’ equation, turbulence, or other fluid systems
+Robotics and soft-body physics: neural simulators and differentiable physics are used to speed up contact and deformation modeling.
+Engineering design loops: a slow but accurate physics simulator is replaced with a fast surrogate during optimization, then checked against the original simulator.
+### Unknown: Simple
+Cell 3 — Unknown & Simple (Ohm's Law)
+Ohm's Law (V = IR) wasn't derived from theory — Ohm found it experimentally in 1827. He varied conditions across conductors and observed that current and voltage related linearly and consistently enough to state as a general rule. The relationship was in the data before it was in any textbook.
+Two honest caveats worth keeping in the script:
+
+It doesn't hold for all materials or conditions — it's an approximation that works well within a domain
+The discovery wasn't a single clean experiment; it was a pattern that became trustworthy through repeated confirmation
+
+Why this is the right example for Cell 3: at the moment of discovery, the relationship was unknown. After enough data, it turned out to be simple and stable — so it could be written down as a formula. That's the cell 3 move: unknown → discovered to be simple.
+
+The broader point this unlocks for your script is actually stronger with the caveats included: even Ohm's Law, one of the cleaner empirical discoveries, only holds within a regime and required repeated confirmation before trust was established. That's a direct preview of the Cell 4 problem — in ML, you're trying to do the same thing, but the relationship may never simplify into a clean formula, and you never fully know whether your pattern generalises outside the data you've seen.
+### Unknown: Complex
+
 ### Intuition for bias
 [For the next step up, let me give an example]
 We want to predict if a student passes 1 = pass, o = fail
