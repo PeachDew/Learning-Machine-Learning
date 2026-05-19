@@ -80,10 +80,62 @@ and they can be roughly classified into this confusion matrix
 Their actual mathematical relationship can be known or unknown
 And computationally, they can either be simple or complex
 
- - things that are unknown dont stay unknown forever
- - there are levels to knowing, actual laws 
- - or empirical laws, relationships that were revealed by data
- - some actually stay unknown for a long/indefinite(impossible to know) time
+## The known and unknown
+first lets talk about "knowing" relationships
+what does it mean when a relationship is known? (pause)
+
+The strongest form, is a **derived** law
+ - a relationship we can prove from first principles
+    - for example a triangle,
+    - what's the sum of the angles in a triangle?
+    - 180 degrees, and we can prove concretely this is the case
+    - if we tear the three corners,
+    - place the side by side
+    - they form a straight, 180 degree line
+ - then there are **EMPIRICAL** laws
+    - relationships that WERE NOT derived from theory
+    - but showed up so consistently in collected data, that they were promoted to laws
+    
+    - for example Ohm's Law,
+    - Ohm ran experiments, and it was observed that patterns held reliably across conductors and conditions
+    - and the consistency and regularity was enough to be trusted and built on
+    - known, through data, but not proof
+
+ - then there are relationships that are completely unknown
+    - because the system is too complex, 
+    - or exists in an environment too noisy
+    - or too entangled with human behavior, which is unpredictable, noisy, not consistent
+    - too complex, to ever reduce to a clean formula
+
+    - Whether someone repays a loan
+    - Whether a tumour is malignant
+
+    so unknown, not like is a magical mystical force,
+    but it just means the ground truth function is out of reach,
+    all we have is data
+    and THAT is where ML operates
+
+    just like how Ohm's law was unknown, could some of these ground truth functions be known someday?
+    maybe.
+    but in the domains ML cares about
+    in a human world, when we model the world, the world adjusts
+    in quantum mechanics, observing an electron changes it because the measurment physically disturbs it
+    in credit scores, once people figure out underlying patterns in the credit scoring model, 
+    they change their behavior to score better
+    and suddenly you're measuring something different from what you trained on
+
+## Goodhart's law
+Why it matters in ML
+
+In ML, you almost always optimize a proxy objective: 
+ - loss functions, accuracy, BLEU, click‑through rate, etc. 
+These are all “measures” that stand in for a richer, 
+harder‑to-measure goal like 
+ - “helpful answers,” 
+ - “good recommendations,” 
+ - or “safe behavior.” 
+Goodhart’s Law warns that if you push too hard on a proxy, 
+your model will exploit quirks of that proxy instead of improving the real underlying goal.
 
 ### Known and Simple
 Cm and M
